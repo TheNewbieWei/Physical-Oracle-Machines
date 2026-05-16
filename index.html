@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wei Zhou — Physical Oracle Machines</title>
+  <meta name="description" content="Founder-researcher building Physical Oracle Machines for the Agentic AI era, bridging physical reality with automated symbolic closure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --paper:#f8f4ec; --paper2:#fffaf0; --paper3:#efe6d6; --card:#fffdf8;
+      --ink:#20201d; --soft:#46423d; --muted:#756d62; --muted2:#9a9080;
+      --line:#d9cdb9; --line2:#bba98f; --accent:#8b3a1f; --accent2:#a76a32;
+      --wash:#f1dfce; --night:#191714; --night2:#24201c; --cream:#fff5e5;
+      --green:#314d35; --max:1180px; --radius:22px;
+      --shadow:0 22px 70px rgba(51,37,20,.10); --softShadow:0 10px 30px rgba(51,37,20,.07);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 8% -5%,rgba(167,106,50,.12),transparent 32%),radial-gradient(circle at 92% 6%,rgba(139,58,31,.09),transparent 28%),linear-gradient(180deg,var(--paper2),var(--paper) 28%,#f3ecdd 100%);color:var(--ink);font-family:Inter,"Noto Sans SC",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:multiply}
+    .zh .en, body:not(.zh) .cn{display:none!important} a{color:inherit;text-decoration:none} p{margin:0} button,input{font:inherit}.shell{width:min(var(--max),calc(100vw - 48px));margin:0 auto;position:relative;z-index:1}.mono{font-family:"JetBrains Mono",monospace}.serif{font-family:"Source Serif 4","Noto Serif SC",Georgia,serif}.topbar{position:sticky;top:0;z-index:30;backdrop-filter:blur(16px);background:rgba(248,244,236,.82);border-bottom:1px solid rgba(217,205,185,.75)}.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.03em;font-size:18px}.brand-mark{width:34px;height:34px;border:1px solid var(--ink);display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:11px;background:rgba(255,250,240,.65)}.nav-right{display:flex;align-items:center;gap:18px}.nav-links{display:flex;align-items:center;gap:17px}.nav-links a{font-size:13px;font-weight:700;color:var(--muted);padding:8px 0}.nav-links a:hover{color:var(--ink)}.lang-toggle{border:1px solid var(--line2);background:rgba(255,250,240,.7);color:var(--ink);min-height:38px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:7px}.lang-toggle span{color:var(--muted)}
+    section{padding:76px 0;border-top:1px solid rgba(217,205,185,.65)}.hero{padding:74px 0 32px;border-top:0}.section-head{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1fr);gap:44px;align-items:start;margin-bottom:34px}.section-kicker{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:800;display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}.section-kicker:before{content:"";width:24px;height:1px;background:var(--accent)}.section-title{margin:0;font-size:clamp(31px,3.4vw,43px);line-height:1.07;letter-spacing:-.045em;font-weight:800}.section-desc{font-size:17px;line-height:1.75;color:var(--soft);max-width:650px}.zh .section-desc{line-height:1.88}.accent{color:var(--accent)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border:1px solid var(--line2);border-radius:999px;background:rgba(255,250,240,.65);font-size:14px;font-weight:800;color:var(--ink);box-shadow:0 3px 0 rgba(0,0,0,.03);transition:transform .16s,border-color .16s,background .16s}.btn:hover{transform:translateY(-1px);border-color:var(--accent)}.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--cream)}.btn.small{min-height:44px;padding:0 16px;font-size:14px}.card-cta{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:var(--accent);margin-top:20px}.card-cta:hover{text-decoration:underline}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,.88fr);gap:42px;align-items:stretch}.hero-left{padding:28px 0 24px;display:flex;flex-direction:column;justify-content:center}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--muted);font-family:"JetBrains Mono",monospace;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:25px}.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 7px rgba(139,58,31,.1)}h1{margin:0;font-size:clamp(40px,5.1vw,58px);line-height:1.01;letter-spacing:-.066em;font-weight:850;max-width:740px}.zh h1{letter-spacing:-.056em}.hero-sub{max-width:740px;color:var(--soft);font-size:18px;line-height:1.74;margin-top:25px}.hero-sub strong{color:var(--ink);font-weight:800}.tagline{margin-top:18px;padding-left:16px;border-left:3px solid var(--accent);font-size:17px;font-weight:750;color:var(--ink)}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.headline-card{position:relative;min-height:560px;border:1px solid var(--line2);background:linear-gradient(155deg,#fff7e8 0%,#f3e6d5 44%,#e4d3bd 100%);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;padding:28px;display:flex;flex-direction:column;justify-content:space-between}#heroCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.32}.headline-content{position:relative;z-index:1}.headline-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;font-family:"JetBrains Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--accent);margin-bottom:24px}.status-pill{border:1px solid rgba(139,58,31,.35);border-radius:999px;padding:6px 10px;background:rgba(255,250,240,.45);color:var(--ink)}.headline-card h2{margin:0;font-size:clamp(33px,3.3vw,46px);line-height:1.06;letter-spacing:-.052em;font-weight:850}.headline-sub{margin-top:20px;color:var(--soft);font-size:17px;line-height:1.68}.card-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}.headline-note{position:relative;z-index:1;border:1px solid rgba(139,58,31,.28);background:rgba(255,250,240,.58);border-radius:16px;padding:16px 18px;color:var(--soft);font-size:14.5px;line-height:1.62}.headline-note strong{color:var(--accent)}.cred-bar{margin-top:24px;border:1px solid var(--line);border-radius:20px;background:rgba(255,253,248,.76);box-shadow:var(--softShadow);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;padding:20px 22px}.cred-text{font-size:15.5px;line-height:1.72;color:var(--soft)}.cred-text strong{color:var(--ink)}.social-links{display:flex;flex-wrap:wrap;gap:10px}.social-links a{border:1px solid var(--line2);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;color:var(--ink);background:rgba(255,250,240,.65)}.social-links a:hover{border-color:var(--accent);color:var(--accent)}
+    .topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.topic-card,.light-card{border:1px solid var(--line);background:rgba(255,253,248,.78);border-radius:20px;box-shadow:var(--softShadow);padding:24px}.topic-card h3,.light-card h3{margin:10px 0 10px;font-size:21px;line-height:1.22;letter-spacing:-.035em}.topic-card p,.light-card p{color:var(--soft);font-size:15.5px;line-height:1.7}.card-label{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:800}
+    .thesis{background:linear-gradient(180deg,var(--night),var(--night2));color:var(--cream);border-top:0}.thesis .shell{display:grid;grid-template-columns:270px minmax(0,1fr);gap:42px}.thesis-rail{position:sticky;top:90px;align-self:start}.thesis-label{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#d79b6d;font-weight:800;margin-bottom:15px}.thesis h2{margin:0;font-size:32px;line-height:1.08;letter-spacing:-.045em}.thesis-body{font-family:"Source Serif 4","Noto Serif SC",Georgia,serif;font-size:18px;line-height:1.82;color:rgba(255,245,229,.88);max-width:850px}.zh .thesis-body{line-height:1.95}.thesis-body p+p{margin-top:20px}.thesis-body em{color:#ffd4a8;font-style:normal}.quote-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:34px;max-width:900px}.pull-quote{border:1px solid rgba(255,245,229,.18);background:rgba(255,245,229,.06);border-radius:16px;padding:15px;color:#ffd7b3;font-weight:800;font-size:15.5px;line-height:1.42}
+    .note-panel{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(330px,.82fr);gap:28px;align-items:stretch}.note-copy{border:1px solid var(--line);background:rgba(255,253,248,.78);border-radius:var(--radius);padding:30px;box-shadow:var(--softShadow)}.note-copy h3{margin:0 0 14px;font-size:28px;line-height:1.14;letter-spacing:-.045em}.note-copy p{color:var(--soft);font-size:16.5px;line-height:1.75}.subscribe-box{border:1px solid var(--line2);background:#fffdf8;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}.subscribe-box label{font-weight:850;font-size:18px}.subscribe-box input{width:100%;border:1px solid var(--line2);border-radius:14px;height:48px;padding:0 14px;background:#fffaf0;color:var(--ink);font-size:15px}.subscribe-note{font-size:13px;color:var(--muted);line-height:1.55}.split-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.86fr);gap:34px;align-items:start}.prose-card{border:1px solid var(--line);background:rgba(255,253,248,.84);border-radius:var(--radius);padding:30px;box-shadow:var(--softShadow)}.prose-card p{font-size:16.8px;line-height:1.86;color:var(--soft)}.prose-card p+p{margin-top:17px}.zh .prose-card p{line-height:2}.prose-card strong{color:var(--ink)}.symbol-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fffdf8;box-shadow:var(--softShadow)}.symbol-table th{background:#efe6d6;color:var(--ink);font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-family:"JetBrains Mono",monospace;text-align:left;padding:13px 14px}.symbol-table td{padding:14px;border-top:1px solid var(--line);font-size:14.5px;line-height:1.48;color:var(--soft);vertical-align:top}.symbol-table td:first-child{font-weight:850;color:var(--ink)}.table-caption{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.55}.root-intro{border:1px solid var(--line);background:rgba(255,253,248,.84);border-radius:var(--radius);padding:30px;box-shadow:var(--softShadow);margin-bottom:26px}.root-intro p{font-size:17px;line-height:1.9;color:var(--soft)}.root-intro p+p{margin-top:17px}.arc-table{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.arc-card{border:1px solid var(--line);background:rgba(255,253,248,.78);border-radius:18px;padding:19px;box-shadow:var(--softShadow)}.arc-card header{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:10px}.arc-card h3{font-size:18px;line-height:1.18;margin:0;letter-spacing:-.025em}.arc-card time{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--accent);font-weight:800;white-space:nowrap}.arc-card .claim{font-weight:850;color:var(--ink);margin-bottom:7px;font-size:15.5px}.arc-card p{font-size:14.5px;line-height:1.65;color:var(--soft)}.root-conclusion{border-left:4px solid var(--accent);padding-left:22px;margin-top:28px;max-width:930px}.root-conclusion p{font-size:17px;line-height:1.88;color:var(--soft)}.root-conclusion p+p{margin-top:17px}.root-conclusion strong{color:var(--ink)}
+    .method-grid{display:grid;grid-template-columns:310px 1fr;gap:24px}.method-tabs{display:grid;gap:12px}.method-tab{text-align:left;border:1px solid var(--line);border-radius:17px;background:rgba(255,253,248,.74);padding:17px;cursor:pointer}.method-tab small{display:block;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);font-weight:800;margin-bottom:7px}.method-tab b{font-size:17px}.method-tab.active{border-color:var(--accent);background:#fff7e8;box-shadow:var(--softShadow)}.method-panel{border:1px solid var(--line2);background:#fffdf8;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);overflow:hidden}.method-panel h3{margin:0 0 12px;font-size:25px;line-height:1.16;letter-spacing:-.04em}.method-panel p{font-size:16px;line-height:1.75;color:var(--soft);max-width:720px}.method-example{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.example-step{border:1px solid var(--line);border-radius:15px;padding:13px;font-size:13.5px;color:var(--soft);background:#f8f0e2}.example-step strong{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;background:var(--paper3);color:var(--ink);margin-bottom:6px}.example-step.active{border-color:var(--accent);background:#fff4e4}.example-step.active strong{background:var(--accent);color:var(--cream)}#methodCanvas{width:100%;height:170px;display:block;margin-top:16px;border-radius:15px;background:#f4eadc}.range-controls{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px}.filter-pill{border:1px solid var(--line2);border-radius:999px;background:rgba(255,253,248,.7);min-height:38px;padding:0 13px;font-size:13px;font-weight:850;color:var(--muted);cursor:pointer}.filter-pill.active{background:var(--ink);border-color:var(--ink);color:var(--cream)}.range-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.range-card.hidden{display:none}.domain{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:850}.about-grid{display:grid;grid-template-columns:340px 1fr;gap:24px}.identity-card{border:1px solid var(--line2);background:#fffdf8;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between}.avatar{width:78px;height:78px;border:1px solid var(--ink);display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:800;margin-bottom:20px;background:#f4eadc}.identity-card h3{margin:0 0 8px;font-size:28px;letter-spacing:-.04em}.identity-card p{color:var(--soft);font-size:15.5px;line-height:1.75}.evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.venture-card{grid-column:span 2;border:1px solid var(--accent);background:#fff7ea}.contact-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}footer{padding:34px 0 50px;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line)}.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:var(--ink);color:var(--cream);border-radius:999px;padding:12px 18px;font-size:13px;font-weight:800;z-index:99;transition:.22s}.toast.show{opacity:1;transform:translate(-50%,0)}
+
+    .math-origin{background:linear-gradient(180deg,rgba(255,250,240,.34),rgba(239,230,214,.28));}
+    .origin-quote{align-self:center;border-left:4px solid var(--accent);padding:6px 0 6px 22px;color:var(--soft);font-family:"Source Serif 4","Noto Serif SC",serif;font-size:clamp(21px,2.2vw,28px);line-height:1.42;font-weight:500;max-width:560px}.origin-quote .cn{font-size:.88em}.origin-prose{max-width:760px;margin:0 auto 34px;font-family:"Source Serif 4","Noto Serif SC",serif;color:var(--ink);font-size:18px;line-height:1.86}.zh .origin-prose{font-size:17.5px;line-height:2}.origin-prose p{margin:0 0 1.5em}.origin-prose strong{color:var(--accent);font-weight:750}.origin-figure{margin:38px auto 44px;max-width:1120px;border:1px solid var(--line2);background:#f1e6d6;border-radius:18px;padding:22px 22px 18px;box-shadow:var(--softShadow);position:relative;overflow:hidden}.origin-figure:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}.origin-svg{position:relative;z-index:1;width:100%;height:auto;display:block}.origin-caption{position:relative;z-index:1;margin:14px auto 0;max-width:980px;color:var(--soft);font-family:"Source Serif 4","Noto Serif SC",serif;font-size:14px;line-height:1.75}.zh .origin-caption{line-height:1.9}.turing-quote{max-width:980px;margin:34px auto 38px;background:#efe1cf;border-left:5px solid var(--accent);padding:30px 34px;border-radius:0 18px 18px 0;font-family:"Source Serif 4","Noto Serif SC",serif;color:var(--ink);box-shadow:var(--softShadow)}.turing-quote blockquote{margin:0;font-size:clamp(27px,3.2vw,42px);line-height:1.18;letter-spacing:-.035em}.turing-quote .attr{margin-top:12px;font-family:"JetBrains Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.turing-quote .quote-cn{margin-top:20px;font-size:22px;font-weight:650;color:var(--accent)}.turing-quote .quote-note{margin-top:16px;font-style:italic;color:var(--soft);font-size:16px;line-height:1.7}.timeline-figure{padding:24px 24px 20px}.origin-transition{margin:34px auto 0;max-width:760px;text-align:center;color:var(--accent);font-family:"Source Serif 4","Noto Serif SC",serif;font-size:17px;line-height:1.8}.origin-transition a{display:inline-block;margin-top:14px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:var(--accent)}.about-new-grid{display:grid;grid-template-columns:330px 1fr;gap:24px}.about-copy{border:1px solid var(--line2);background:#fffdf8;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}.about-copy h3{margin:0 0 12px;font-size:30px;letter-spacing:-.04em}.about-copy p{color:var(--soft);font-size:16px;line-height:1.82;margin:0 0 18px}.about-list{display:grid;gap:14px}.about-item{border:1px solid var(--line);background:#fffdf8;border-radius:18px;padding:20px}.about-item .card-label{margin-bottom:8px}.about-item h3{margin:0 0 8px;font-size:20px;letter-spacing:-.025em}.about-item p{margin:0;color:var(--soft);font-size:15.5px;line-height:1.75}.about-item.wide{grid-column:span 2;background:#fff7ea;border-color:var(--accent)}.contact-final{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.contact-final .btn{min-height:44px}.zh .about-copy p,.zh .about-item p{line-height:1.9}@media(max-width:980px){.origin-quote{max-width:100%;font-size:21px}.origin-prose{font-size:17px}.origin-figure{padding:14px;margin:28px 0}.origin-caption{font-size:13.5px}.about-new-grid{grid-template-columns:1fr}.about-item.wide{grid-column:auto}.turing-quote{padding:24px}.turing-quote blockquote{font-size:28px}}
+
+    @media(max-width:980px){.shell{width:min(100% - 32px,var(--max))}.nav-links{display:none}.hero-grid,.section-head,.split-grid,.note-panel,.thesis .shell,.method-grid,.about-grid{grid-template-columns:1fr}.hero{padding-top:42px}.headline-card{min-height:500px}.cred-bar{grid-template-columns:1fr}.topic-grid,.range-grid,.evidence-grid,.arc-table{grid-template-columns:1fr}.venture-card{grid-column:auto}.quote-row,.method-example{grid-template-columns:1fr}.thesis-rail{position:static}.section-title{font-size:34px}h1{font-size:42px}footer{flex-direction:column}.nav{height:62px}}
+
+  /* ===== v0.9 biography hook + tabbed founder section ===== */
+  .bio-hook{display:block;padding:0;background:transparent;border:0;box-shadow:none;margin-top:26px}
+  .bio-hook-inner{border:1px solid var(--line);border-radius:22px;background:rgba(255,253,248,.86);box-shadow:var(--softShadow);padding:24px 26px}
+  .bio-hook-copy{max-width:980px;color:var(--soft);font-size:15.8px;line-height:1.78}
+  .bio-hook-copy .hook-name{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);font-weight:900;margin:0 0 10px}
+  .bio-hook-copy p{margin:0 0 12px}.bio-hook-copy p:last-child{margin-bottom:0}.bio-hook-copy strong{color:var(--ink);font-weight:850}
+  .bio-hook-footer{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+  .bio-more-link{display:inline-flex;align-items:center;gap:8px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:900;border-bottom:1px solid rgba(139,58,31,.55);padding-bottom:3px}
+  .bio-tab-area{border:1px solid var(--line2);background:#fffdf8;border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;display:grid;grid-template-columns:310px 1fr;gap:24px;align-items:start}
+  .bio-tab-nav{display:grid;gap:12px;position:sticky;top:94px}.bio-tab-button{text-align:left;border:1px solid var(--line);background:#fbf4e9;border-radius:18px;padding:16px;cursor:pointer;color:var(--ink);transition:.18s}.bio-tab-button:hover{border-color:rgba(139,58,31,.5);transform:translateY(-1px)}.bio-tab-button.active{background:#fff4e3;border-color:var(--accent);box-shadow:var(--softShadow)}.bio-tab-button small{display:block;font-family:"JetBrains Mono",monospace;color:var(--accent);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:900;margin-bottom:7px}.bio-tab-button b{display:block;font-size:17px;line-height:1.24;letter-spacing:-.02em}.bio-tab-button span.note{display:block;margin-top:8px;color:var(--muted);font-size:12.5px;line-height:1.35}
+  .bio-tab-panel{display:none;min-height:345px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,#fffdf8,#fbf4e9);padding:30px 32px}.bio-tab-panel.active{display:block}.bio-tab-panel .panel-kicker{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:900;margin-bottom:12px}.bio-tab-panel h3{margin:0 0 16px;font-size:32px;line-height:1.12;letter-spacing:-.045em}.bio-tab-panel p{margin:0 0 18px;color:var(--soft);font-size:17px;line-height:1.86}.zh .bio-tab-panel p{font-size:16.7px;line-height:1.95}.bio-tab-panel p:last-child{margin-bottom:0}
+  .shift-card{margin-top:20px;border:1px solid var(--line2);border-radius:var(--radius);background:#f4eadc;padding:32px 34px;box-shadow:var(--softShadow)}.shift-card .card-label{margin-bottom:12px}.shift-card h3{margin:0 0 14px;font-size:30px;letter-spacing:-.04em}.shift-card p{margin:0;color:var(--soft);font-size:17px;line-height:1.82}.zh .shift-card p{line-height:1.94}
+  .bio-lower-grid{margin-top:24px;display:grid;grid-template-columns:minmax(290px,.9fr) minmax(0,1.45fr);gap:24px;align-items:stretch}.bio-identity,.bio-system-card,.bio-contact-card{border:1px solid var(--line2);background:#fffdf8;border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}.bio-identity{display:flex;flex-direction:column;justify-content:space-between}.bio-identity h3{margin:0 0 7px;font-size:32px;letter-spacing:-.045em}.bio-identity .role{font-size:15px;color:var(--accent);font-weight:850;margin:0 0 20px}.bio-identity p,.bio-system-card p,.bio-contact-card p{color:var(--soft);font-size:16.2px;line-height:1.82;margin:0 0 16px}.zh .bio-identity p,.zh .bio-system-card p,.zh .bio-contact-card p{line-height:1.94}.bio-system-card{background:linear-gradient(180deg,#fffdf8,#fff3e4);border-color:rgba(139,58,31,.45)}.bio-system-card h3{font-size:32px;line-height:1.1;margin:0 0 14px;letter-spacing:-.045em}.bio-contact-card{grid-column:1 / -1;background:#20201d;color:var(--cream);display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.bio-contact-card p{color:rgba(255,245,229,.78);margin-bottom:0}.bio-contact-card h3{margin:0 0 8px;color:var(--cream);font-size:24px}.bio-contact-card .btn{background:transparent;color:var(--cream);border-color:rgba(255,245,229,.32)}.bio-contact-card .btn.primary{background:var(--accent);border-color:var(--accent);color:#fffaf0}.bio-links-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.bio-links-row a{border:1px solid var(--line2);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:850;color:var(--ink);background:#fff7e8}.bio-links-row a:hover{border-color:var(--accent);color:var(--accent)}
+  @media (max-width:960px){.bio-tab-area{grid-template-columns:1fr;padding:18px}.bio-tab-nav{position:static;grid-template-columns:1fr}.bio-lower-grid{grid-template-columns:1fr}.bio-contact-card{grid-template-columns:1fr}.bio-tab-panel{padding:24px 20px;min-height:auto}.bio-tab-panel h3,.bio-system-card h3,.bio-identity h3{font-size:28px}.bio-hook-inner{padding:21px 18px}}
+
+
+    .coming-soon-card{
+      border:1px dashed var(--line);
+      background:rgba(255,250,240,.72);
+      min-height:180px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:44px 24px;
+      margin-top:28px;
+    }
+    .coming-soon-card .soon-label{
+      font-family:"JetBrains Mono",monospace;
+      font-size:13px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--rust);
+      margin-bottom:10px;
+    }
+    .coming-soon-card p{
+      font-family:"Source Serif 4","Noto Serif SC",serif;
+      font-size:28px;
+      color:var(--ink);
+      margin:0;
+    }
+    .subscribe-box input[name=email]{
+      min-height:48px;
+    }
+    .subscribe-box .small-meta{
+      display:block;
+      margin-top:10px;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+  </style>
+
+<!--
+LAUNCH CONFIGURATION:
+1) Buttondown subscribe endpoint is already connected to username: TheNewbieWei
+   https://buttondown.com/api/emails/embed-subscribe/TheNewbieWei
+2) X link is set to https://x.com/TheNewbieWei
+3) Substack link is set to https://thenewbiewei.substack.com — change this if your Substack slug differs.
+4) GitHub link is set to https://github.com/TheNewbieWei
+5) Field guide / technical note links can be replaced after publication.
+-->
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell nav">
+      <a href="#top" class="brand" aria-label="Wei Zhou home"><span class="brand-mark">WZ</span><span><span class="cn">周维</span><span class="en">Wei Zhou</span></span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#current"><span class="en">Current</span><span class="cn">当前议题</span></a>
+          <a href="#thesis"><span class="en">Thesis</span><span class="cn">论题</span></a>
+          <a href="#oracle"><span class="en">Oracle</span><span class="cn">预言机</span></a>
+          <a href="#origin"><span class="en">Origin</span><span class="cn">数学起源</span></a>
+          <a href="#roots"><span class="en">Roots</span><span class="cn">根源</span></a>
+          <a href="#method"><span class="en">Method</span><span class="cn">方法</span></a>
+          <a href="#about"><span class="en">About</span><span class="cn">作者</span></a>
+        </nav>
+        <button class="lang-toggle" id="langToggle" type="button">EN <span>/</span> 中文</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="eyebrow"><span class="dot"></span><span class="en">Founder-Researcher · Physical Oracle Machines · @TheNewbieWei</span><span class="cn">创始人型研究者 · 物理预言机系统</span></div>
+          <h1><span class="en">Building proof systems for AI Agents acting in the real world.</span><span class="cn">为进入真实世界行动的 AI Agent，建立证明系统。</span></h1>
+          <div class="hero-sub"><span class="en">I work on <strong>physical oracle machines</strong>: evidence interfaces that allow AI agents, devices, and institutions to prove that real-world processes actually occurred — not merely claim, log, or sign that they did.</span><span class="cn">我研究 <strong>物理预言机系统</strong>：一种证据接口，让 AI Agent、设备和机构能够证明真实世界过程确实发生过，而不只是生成声明、日志或签名。</span></div>
+          <div class="tagline"><span class="en">Where epistemology becomes infrastructure — and infrastructure becomes a venture-building program.</span><span class="cn">在这里，认识论开始变成基础设施，也进入商业化和生态落地。</span></div>
+          <div class="hero-actions">
+            <a class="btn primary" href="#current"><span class="en">Start with the current case</span><span class="cn">从当前议题开始</span> →</a>
+            <a class="btn" href="#oracle"><span class="en">See the generalized problem</span><span class="cn">查看广义问题</span> ↓</a>
+          </div>
+        </div>
+        <aside class="headline-card" aria-label="Current topic headline">
+          <canvas id="heroCanvas"></canvas>
+          <div class="headline-content">
+            <div class="headline-meta"><span><span class="en">Current Topic · 2026</span><span class="cn">当前议题 · 2026</span></span><span class="status-pill"><span class="en">Live case</span><span class="cn">公开案例</span></span></div>
+            <h2><span class="en">AI Consciousness Claims <span class="accent">as a No-Oracle Problem</span></span><span class="cn">AI 意识声明：<span class="accent">一个无预言机问题</span></span></h2>
+            <p class="headline-sub"><span class="en">Why syntactic isomorphism is not enough evidence — and what would make machine-mind bridge claims admissible.</span><span class="cn">为什么纯句法同构不足以构成证据，以及机器—心智桥接声明需要怎样的可采纳协议。</span></p>
+            <div class="card-actions"><a class="btn primary small" href="#current"><span class="en">Read the field guide</span><span class="cn">阅读争论导览</span> →</a><a class="btn small" href="#note"><span class="en">Get the technical note</span><span class="cn">订阅技术笔记</span> →</a></div>
+          </div>
+          <div class="headline-note"><span class="en"><strong>No-Oracle</strong> does not mean no oracle can be built. It means no internal or purely syntactic Yes-Oracle can certify the claim from within the system.</span><span class="cn"><strong>无预言机</strong>不是说不能构建外部预言机，而是说不存在一个系统内部的、纯句法的 YES-Oracle，可以从内部认证这个声明。</span></div>
+        </aside>
+      </div>
+      <div class="cred-bar bio-hook">
+        <div class="bio-hook-inner">
+          <div class="bio-hook-copy">
+            <p class="hook-name"><span class="en">Wei Zhou / 周维 · Founder-Researcher, Physical Oracle Machines · @TheNewbieWei</span><span class="cn">周维 / Wei Zhou · Founder-Researcher, Physical Oracle Machines · @TheNewbieWei</span></p>
+            <p><span class="en">My work comes from more than a decade of exposure to high-mobility special-purpose off-road platforms, offline / off-grid / weak-network field operations, and the product definition of mobile physical systems. These platforms operate in places where centralized trust infrastructure often cannot reach: oil and gas pipelines, power-line inspection, emergency response, agricultural operations, and security-edge environments.</span><span class="cn">我的问题意识来自十余年高机动特种越野平台、离线/离网/弱网作业场景与移动设备原型的产品定义和场景论证。对标乌尼莫克级别的特种越野平台，面对的是一类中心化信任基础设施难以覆盖的现场：油气管线、电力巡检、应急抢险、农业作业和安防边界。</span></p>
+            <p><span class="en">These environments are not short of value creation. Much of the world’s resources, labor, and productive activity exists precisely beyond the easy reach of centralized verification. What is missing is a mechanism that can turn field operations into reviewable, accountable, and verifiable data assets — not merely logs, signatures, or uploaded records.</span><span class="cn">这些地方并不缺少价值创造。恰恰相反，世界上大量资源、生产要素和物理劳动都发生在这些“信任暗区”。真正缺失的是一种机制：让现场作业不只被记录、上传或签名，而是能够转化为可审查、可追责、可验证的可信数据资产。</span></p>
+            <p><span class="en"><strong>Physical Oracle Machines</strong> grows out of this gap: making claims by agents, devices, and institutions about real physical processes evidentially qualified.</span><span class="cn"><strong>Physical Oracle Machines</strong> 正是从这个断层中生长出来的：让 Agent、设备和机构关于真实物理过程的声明，获得证据资格。</span></p>
+          </div>
+          <div class="bio-hook-footer">
+            <a class="bio-more-link" href="#about"><span class="en">Full background</span><span class="cn">完整背景</span> ↓</a>
+            <div class="social-links"><a href="https://x.com/TheNewbieWei" target="_blank" rel="noopener">X</a><a href="https://thenewbiewei.substack.com" target="_blank" rel="noopener">Substack</a><a href="https://buttondown.com/TheNewbieWei" target="_blank" rel="noopener">Newsletter</a><a href="https://github.com/TheNewbieWei" target="_blank" rel="noopener">GitHub</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="current">
+      <div class="shell">
+        <div class="section-head">
+          <div><div class="section-kicker"><span class="en">01 · Current Topic</span><span class="cn">01 · 当前议题</span></div><h2 class="section-title"><span class="en">Visible Positions.<br/>One Empty Seat.</span><span class="cn">可见的阵营。<br/>空着的位置。</span></h2></div>
+          <p class="section-desc"><span class="en">A field guide to the post-Lerchner AI consciousness debate. The empty seat is the admissibility question: what would make a machine-consciousness claim eligible for serious review?</span><span class="cn">一份关于 Post-Lerchner AI 意识争论的导览。那个空位，就是证据可采纳性问题：什么证据能让一个机器意识声明有资格被认真审查？</span></p>
+        </div>
+        <div class="topic-grid">
+          <article class="topic-card"><div class="card-label"><span class="en">Field Guide</span><span class="cn">争论导览</span></div><h3><span class="en">Visible Positions and One Empty Seat</span><span class="cn">可见阵营与一个空位</span></h3><p><span class="en">A map of the visible response positions after Lerchner — and the missing evidential question they leave open.</span><span class="cn">梳理 Lerchner 之后的可见响应阵营，以及这些阵营共同留下的证据资格空位。</span></p><a class="card-cta" href="#" data-toast="Replace with the Substack field guide link"><span class="en">Read the field guide</span><span class="cn">阅读导览</span> →</a></article>
+          <article class="topic-card"><div class="card-label"><span class="en">Core Argument</span><span class="cn">核心论证</span></div><h3><span class="en">The No-Oracle Thesis</span><span class="cn">无预言机论题</span></h3><p><span class="en">Why the debate may be searching for a Yes-Oracle that cannot exist inside syntax — and why the disputed object is the bridge.</span><span class="cn">为什么这场争论可能一直在寻找一个无法存在于句法内部的 YES-Oracle，以及为什么真正有争议的是“桥”。</span></p><a class="card-cta" href="#thesis"><span class="en">Jump to thesis</span><span class="cn">跳到论题</span> ↓</a></article>
+          <article class="topic-card"><div class="card-label"><span class="en">Technical Note</span><span class="cn">技术笔记</span></div><h3><span class="en">Beyond the Abstraction Fallacy</span><span class="cn">超越抽象谬误</span></h3><p><span class="en">A forthcoming admissibility protocol for machine-mind bridge claims, focused on evidence standing rather than metaphysical verdicts.</span><span class="cn">即将发布的机器—心智桥接声明可采纳协议，重点不是形而上判决，而是证据资格。</span></p><a class="card-cta" href="#note"><span class="en">Get notified</span><span class="cn">订阅通知</span> →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="thesis" class="thesis">
+      <div class="shell">
+        <aside class="thesis-rail"><div class="thesis-label"><span class="en">02 · Thesis</span><span class="cn">02 · 论题</span></div><h2><span class="en">The No-Oracle Thesis</span><span class="cn">无预言机论题</span></h2></aside>
+        <div>
+          <div class="thesis-body">
+            <p><span class="en">The current debate surrounding AI consciousness — whether approached through computational functionalism or its physicalist critiques — has reached an epistemological deadlock.</span><span class="cn">围绕 AI 意识的当前争论——无论是从计算功能主义出发，还是从物理主义批评出发——都已经进入一个认识论僵局。</span></p>
+            <p><span class="en">The struggle stems from a hidden shared premise: both sides are, in different ways, searching for a “Yes-Oracle.” One side looks for an emergent syntactic property. The other looks for a privileged biological substrate. Both hope for something that could definitively output YES: subjective experience is instantiated.</span><span class="cn">这个僵局来自一个隐藏的共同前提：双方都在以不同方式寻找某种 “YES-Oracle”。一边寻找某种涌现的句法性质，另一边寻找某种特权化的生物基底。双方都希望找到一个能够最终输出 YES 的认证者：主观体验已经被实例化。</span></p>
+            <p><span class="en">But this framing may be fundamentally flawed.</span><span class="cn">但这个设问本身可能就是错的。</span></p>
+            <p><span class="en">An AGI, no matter how vast its parameter count, can no more natively verify whether it is raining in London at 6:37 AM than a simple smart contract can. Both operate within computational closure. Both require an external, physics-bound interface — an oracle — to attest to events outside the system.</span><span class="cn">一个 AGI，无论参数规模多大，都不能比一个简单智能合约更原生地验证伦敦早上 6:37 是否正在下雨。二者都处在计算闭包之中；二者都需要一个外部的、受物理约束的接口——一个预言机——去证明系统之外的事件。</span></p>
+            <p><span class="en">The inability of a digital system to self-certify physical reality is not a bug of its complexity. It is a consequence of its syntax. The analogy is not about equating inner experience with external weather. It targets the bridge claim: the move from syntactic trajectory to mental instantiation.</span><span class="cn">数字系统不能自证物理现实，并不是复杂度不足的 bug，而是句法系统本身的后果。这个类比不是把内部体验等同于外部天气。它针对的是那个桥接声明：从句法轨迹跳到心智实例化。</span></p>
+            <p><span class="en">The No-Oracle problem asks a narrower and sharper question: not whether this framework can prove or disprove consciousness itself, but whether a claim that an AI instantiates consciousness has admissible evidential standing.</span><span class="cn">无预言机问题提出的是一个更窄也更锋利的问题：不是这个框架能否证明或否定意识本身，而是一个“AI 实例化了意识”的声明，是否具备可采纳的证据资格。</span></p>
+            <p><span class="en">If an architecture cannot specify how it escapes its own alignability closure through an admissible external or physical interface Π, then any bridge from syntactic isomorphism to mental isomorphism remains evidentially inadmissible.</span><span class="cn">如果一个架构无法说明它如何通过一个可采纳的外部或物理接口 Π 逃出自身的 alignability closure，那么任何从句法同构桥接到心智同构的声明，都仍然是证据上不可采纳的。</span></p>
+            <p><span class="en">This does not deny the metaphysical possibility of AI consciousness. It distinguishes possibility from admissible assertion. A claim may remain possible while lacking evidential standing. The No-Oracle problem concerns the latter.</span><span class="cn">这并不否认 AI 意识的形而上可能性。它区分的是可能性与可采纳声明。一个声明可以仍然可能，但缺少证据资格。无预言机问题关心的是后者。</span></p>
+          </div>
+          <div class="quote-row"><div class="pull-quote"><span class="en">Both sides are searching for a Yes-Oracle.</span><span class="cn">双方都在寻找某种 YES-Oracle。</span></div><div class="pull-quote"><span class="en">The disputed object is not the report. It is the bridge.</span><span class="cn">真正有争议的不是报告，而是桥。</span></div><div class="pull-quote"><span class="en">Possibility is not admissible assertion.</span><span class="cn">可能性不等于可采纳声明。</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="note">
+      <div class="shell note-panel">
+        <div class="note-copy">
+          <div class="section-kicker"><span class="en">03 · Forthcoming Technical Note</span><span class="cn">03 · 即将发布的技术笔记</span></div>
+          <h3><span class="en">Beyond the Abstraction Fallacy:<br/>The Missing Evidential Interface for AI Consciousness Claims</span><span class="cn">超越抽象谬误：<br/>AI 意识声明中缺失的证据接口</span></h3>
+          <p><span class="en">The note does not claim that AI is conscious or unconscious. It asks the prior question: before any claim about machine consciousness can be accepted or rejected, what would make the claim evidentially admissible?</span><span class="cn">这份笔记不宣称 AI 有意识或无意识。它先问一个前置问题：在任何机器意识声明被接受或拒绝之前，什么让这个声明具备证据上的可采纳性？</span></p>
+        </div>
+        <form class="subscribe-box" id="subscribeForm" action="https://buttondown.com/api/emails/embed-subscribe/TheNewbieWei" method="post" target="_blank">
+          <label for="email"><span class="en">Get the release notice</span><span class="cn">订阅发布通知</span></label>
+          <input id="email" name="email" type="email" required placeholder="email@example.com" autocomplete="email" />
+          <input type="hidden" value="1" name="embed" />
+          <input type="hidden" value="technical-note" name="tag" />
+          <input type="hidden" value="physical-oracle-machines-simple-v2" name="metadata__source" />
+          <button class="btn primary" type="submit"><span class="en">Subscribe / Notify me</span><span class="cn">订阅 / 发布时通知我</span> →</button>
+          <p class="subscribe-note"><span class="en">Enter your email to receive the release notice when the technical note is published.</span><span class="cn">留下邮箱，技术笔记发布时收到通知。</span></p>
+          <span class="small-meta"><span class="en">Static-site ready. Buttondown is connected to @TheNewbieWei.</span><span class="cn">适配静态网站。Buttondown 已接入 @TheNewbieWei。</span></span>
+        </form>
+      </div>
+    </section>
+
+    
+
+    <section id="oracle">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker"><span class="en">04 · Generalized Oracle Problem</span><span class="cn">04 · 广义预言机问题</span></div>
+            <h2 class="section-title"><span class="en">What is an oracle?<br/>It is the missing link between a symbol and the world it points to.</span><span class="cn">什么是预言机？<br/>它是符号和它所指向的世界之间，那个缺失的链接。</span></h2>
+          </div>
+          <p class="section-desc"><span class="en">The generalized oracle problem appears whenever symbols claim to refer to something they cannot internally certify.</span><span class="cn">广义预言机问题出现于：符号声称自己指向某个东西，但它无法在自身系统内部认证那个东西。</span></p>
+        </div>
+        <div class="coming-soon-card">
+          <div>
+            <div class="soon-label"><span class="en">Section in preparation</span><span class="cn">本节准备中</span></div>
+            <p><span class="en">Coming soon …</span><span class="cn">Coming soon …</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+
+    <section id="origin">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker"><span class="en">05 · Mathematical Origin</span><span class="cn">05 · 数学起源</span></div>
+            <h2 class="section-title"><span class="en">The Mathematical Origin:<br/>Turing’s Oracle, 1938.</span><span class="cn">数学起源：<br/>图灵的预言机，1938。</span></h2>
+          </div>
+          <p class="section-desc"><span class="en">Before Agentic AI, before blockchain oracles, before the modern debate on AI consciousness — the boundary was already drawn by Turing himself.</span><span class="cn">早在 Agentic AI 之前，早在区块链预言机之前，早在当代 AI 意识争论之前——这条边界，图灵自己已经画下了。</span></p>
+        </div>
+        <div class="coming-soon-card">
+          <div>
+            <div class="soon-label"><span class="en">Section in preparation</span><span class="cn">本节准备中</span></div>
+            <p><span class="en">Coming soon …</span><span class="cn">Coming soon …</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+
+    <section id="roots">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker"><span class="en">06 · Epistemic Roots</span><span class="cn">06 · 认识论根源</span></div>
+            <h2 class="section-title"><span class="en">The ancient problem behind modern machine claims.</span><span class="cn">现代机器声明背后的，那个古老的问题。</span></h2>
+          </div>
+          <p class="section-desc"><span class="en">For 300 years, every epistemological school discovered the same gap. Agentic AI is the first force that requires it to be engineered.</span><span class="cn">三百年来，每个认识论传统都在不同语言中发现了同一个缝隙。Agentic AI 是第一次要求它被工程化的力量。</span></p>
+        </div>
+        <div class="coming-soon-card">
+          <div>
+            <div class="soon-label"><span class="en">Section in preparation</span><span class="cn">本节准备中</span></div>
+            <p><span class="en">Coming soon …</span><span class="cn">Coming soon …</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="method">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker"><span class="en">07 · Method</span><span class="cn">07 · 方法</span></div>
+            <h2 class="section-title"><span class="en">How a Physical Oracle Machine works.</span><span class="cn">物理预言机系统如何工作。</span></h2>
+          </div>
+          <p class="section-desc"><span class="en">It does not merely store a record. It constrains how the record is born.</span><span class="cn">它不只是保存记录，而是约束记录如何出生。</span></p>
+        </div>
+        <div class="coming-soon-card">
+          <div>
+            <div class="soon-label"><span class="en">Section in preparation</span><span class="cn">本节准备中</span></div>
+            <p><span class="en">Coming soon …</span><span class="cn">Coming soon …</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="range">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker"><span class="en">08 · Where It Appears</span><span class="cn">08 · 问题出现在哪里</span></div>
+            <h2 class="section-title"><span class="en">The same problem has many faces.</span><span class="cn">同一个问题，有很多面孔。</span></h2>
+          </div>
+          <p class="section-desc"><span class="en">The generalized Oracle Problem is not limited to consciousness. It appears wherever claims about source processes must be verified.</span><span class="cn">广义预言机问题不限于意识。只要一个声明需要验证其源头过程，它就会出现。</span></p>
+        </div>
+        <div class="coming-soon-card">
+          <div>
+            <div class="soon-label"><span class="en">Section in preparation</span><span class="cn">本节准备中</span></div>
+            <p><span class="en">Coming soon …</span><span class="cn">Coming soon …</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="about">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker"><span class="en">09 · Founder-Researcher / Contact</span><span class="cn">09 · 作者 / 联系</span></div>
+            <h2 class="section-title"><span class="en">Founder-Researcher — Researching and Engineering Physical Oracle Machines for the Agentic AI Era.</span><span class="cn">创始人型研究者——面向 Agentic AI 时代研究并工程化物理预言机系统。</span></h2>
+          </div>
+          <p class="section-desc"><span class="en">This work begins from physical oracle engineering and studies a common problem across AI Agents, RWA, device execution chains, agricultural inspection, BCI, and AI consciousness claims: how do we bridge physical reality with a world increasingly running on automated symbolic closure?</span><span class="cn">这项工作从物理预言机工程出发，研究 AI Agent、RWA、设备执行链、农业质检、BCI 与 AI consciousness claims 中共同出现的问题：我们如何将物理现实，与一个日益运行在自动化符号闭包之上的世界重新连接起来？</span></p>
+        </div>
+
+        <div class="bio-tab-area" aria-label="Founder background tabs">
+          <div class="bio-tab-nav">
+            <button class="bio-tab-button active" type="button" data-bio-tab="0">
+              <small>01 · ORIGIN</small>
+              <b><span class="en">Origin · 起点</span><span class="cn">Origin · 起点</span></b>
+              <span class="note"><span class="en">Heavy off-road platforms · offline / off-grid field operations · fifteen years</span><span class="cn">重型越野平台 · 离线/离网场景 · 十五年</span></span>
+            </button>
+            <button class="bio-tab-button" type="button" data-bio-tab="1">
+              <small>02 · VANTAGE</small>
+              <b><span class="en">Vantage · 那个位置给我的视角</span><span class="cn">Vantage · 那个位置给我的视角</span></b>
+              <span class="note"><span class="en">The physical value space beyond centralized infrastructure</span><span class="cn">中心化基础设施之外的物理价值空间</span></span>
+            </button>
+            <button class="bio-tab-button" type="button" data-bio-tab="2">
+              <small>03 · CONVERGENCE</small>
+              <b><span class="en">Convergence · 与认识论缝隙的相遇</span><span class="cn">Convergence · 与认识论缝隙的相遇</span></b>
+              <span class="note"><span class="en">Physical entitlement ↔ AI consciousness claims</span><span class="cn">物理确权 ↔ AI 意识声明的同构发现</span></span>
+            </button>
+          </div>
+
+          <div class="bio-tab-content">
+            <article class="bio-tab-panel active">
+              <div class="panel-kicker">01 · ORIGIN</div>
+              <h3><span class="en">Origin · The place this question came from.</span><span class="cn">Origin · 起点</span></h3>
+              <p><span class="en">My research did not originate in epistemological philosophy. It came from fifteen years of working around heavy off-road platforms, offline / off-grid operations, and the definition of industrial-grade user needs in real physical wilderness.</span><span class="cn">我的研究不来自于认识论哲学，而是从十五年的重型越野平台、离线/离网作业和在真实的物理荒野中定义工业级别用户需求中获得的灵感。</span></p>
+              <p><span class="en">Since 2005, I joined one of China’s earliest high-mobility special-purpose off-road platform projects benchmarked against the Unimog class, and spent fifteen years in that product line. The only reason such modular platforms exist is to enter places that centralized infrastructure cannot cover — long-distance oil and gas pipelines, remote power-line inspection, borderland no-man’s zones, emergency disconnection zones, and agricultural operations under extreme environments. I was not the frontline engineer drawing blueprints. My role was to define this space: scenario segmentation, requirement decomposition, platform-boundary judgment, and repeated conversations with industry users in the mud.</span><span class="cn">2005 年起，我加入了中国最早一批对标乌尼莫克（Unimog）级别的高机动特种越野平台项目，并在这条产品线里深耕了十五年。这种模块化平台存在的唯一意义，就是挺进那些中心化基础设施覆盖不到的地方——油气长输管线、远程电力巡检、边境无人区、应急断网地带以及极端环境下的农业作业。我不是画图纸的一线工程师，我做的是定义这片空间的事：场景切分、需求解构、平台边界判定，以及与各行业用户在泥泞中反复对话。</span></p>
+            </article>
+
+            <article class="bio-tab-panel">
+              <div class="panel-kicker">02 · VANTAGE</div>
+              <h3><span class="en">Vantage · What that position revealed.</span><span class="cn">Vantage · 那个位置给我的视角</span></h3>
+              <p><span class="en">That position gave me a perspective most digitally native researchers cannot have: the space in which humans create physical value is far larger than the range centralized trust infrastructure can cover.</span><span class="cn">这个位置给了我一个绝大多数数字原生研究者不可能拥有的视角：人类创造物理价值的空间，远比中心化信任基础设施所能覆盖的范围要大得多。</span></p>
+              <p><span class="en">In today’s digital world, there is no independent mechanism to confirm that businesses occurring in these “dark zones” truly exist: a rescue vehicle completing emergency work in a disconnected canyon, or an unmanned device finishing precise operation deep in the Gobi. These are real acts of labor, yet what they can submit to a system is only self-reported logs, coordinates, and photos. My experience was extremely deep and brutal:</span><span class="cn">在今天的数字世界里，没有任何独立机制能确证那些发生在”暗区”的业务是真实存在的：一辆抢险车在断网峡谷里完成了救援，一台无人设备在戈壁深处完成了精准作业——这些都是切切实实发生的劳动，但它们能向系统提交的，只有自报的日志、坐标和照片。我的经验是极其深刻且残酷的：</span></p>
+              <p><span class="en"><strong>In the physical world, no trust = no entitlement.</strong><br/>Because of this trust fracture, a massive amount of physical value in the world remains locked outside the boundary of infrastructure and cannot be released.</span><span class="cn"><strong>在物理世界，无信任 = 无确权。</strong><br/>因为这层信任断裂，世界上有海量的物理价值被锁死在基础设施的边界之外，得不到释放。</span></p>
+            </article>
+
+            <article class="bio-tab-panel">
+              <div class="panel-kicker">03 · CONVERGENCE</div>
+              <h3><span class="en">Convergence · Where the epistemic gap appeared.</span><span class="cn">Convergence · 与认识论缝隙的相遇</span></h3>
+              <p><span class="en">Interestingly, when I tried to find an underlying architectural solution for this kind of “physical entitlement in the wilderness,” I unexpectedly ran into an ultimate epistemological gap. I realized that a machine in the Gobi reporting to a server, “I completed the inspection,” and today’s large language model claiming to humans, “I have generated consciousness,” are structurally isomorphic at the bottom: both are issuing a claim about some ontological process or existence related to themselves and the world, and both are records that cannot be self-verified within their own “symbolic closure.”</span><span class="cn">有趣的是，当我试图为这种”荒野中的物理确权”寻找底层架构解法时，我意外地撞上了一个终极的认识论缝隙。我发现，一台戈壁滩上的机器向服务器回传”我完成了巡检”，与今天的大语言模型向人类声称”我产生了意识”，在问题的底层结构上是同构的——它们都是在发出一个关于他们对世界的某种本体过程/存在的声明，都是一份无法在自身”符号闭包”之内被自我验证。</span></p>
+              <p><span class="en">At that moment I realized that what I was facing was no longer merely an AI philosophy problem, but a massive system-engineering blind spot urgently requiring entitlement.</span><span class="cn">那一刻我意识到，我面对的不再仅仅是一个 AI 哲学问题，而是一个亟待确权的巨大系统工程盲区。</span></p>
+            </article>
+          </div>
+        </div>
+
+        <article class="shift-card">
+          <div class="card-label"><span class="en">04 · THE SHIFT · Agentic AI / machine autonomy / RWA</span><span class="cn">04 · THE SHIFT · AGENTIC AI / 机器自治 / RWA 时代的信任基座</span></div>
+          <h3><span class="en">The Shift · The problem of the age.</span><span class="cn">The Shift · 时代命题</span></h3>
+          <p><span class="en">If a mechanism can be built to break this symbolic closure, allowing remote physical operations to be independently verified and independently entitled, it will trigger an assetization wave far beyond any previous era. When Agentic AI, machine autonomy, and RWA become irreversible futures, this mechanism will move the foundation of “trust” down from fragile centralized clearing layers into a hard physical evidence-interface layer.</span><span class="cn">如果能构建一种打破这种符号闭包的机制，让远方的物理作业能够被独立验证、独立确权，它将引发一场远超以往任何时代的资产化浪潮。当 Agentic AI、机器自治与 RWA（真实世界资产）成为不可逆的未来，这套机制将把”信任”的基座，从脆弱的中心化清算层，直接下沉到坚硬的物理证据接口层。</span></p>
+        </article>
+
+        <div class="bio-lower-grid">
+          <aside class="bio-identity">
+            <div>
+              <div class="avatar">WZ</div>
+              <h3><span class="en">Wei Zhou</span><span class="cn">周维</span></h3>
+              <p class="role"><span class="en">Initiator of Physical Oracle Machines / founder-researcher.</span><span class="cn">Physical Oracle Machines 发起人 / 创始人型研究者。</span></p>
+              <p><span class="en">My work focuses on the evidence-interface problem of the AI era: how machines, models, and digital systems can make claims about the real world with evidential standing that is inspectable, accountable, and verifiable.</span><span class="cn">我的工作聚焦于 AI 时代的证据接口问题：如何让机器、模型和数字系统关于真实世界的声明，获得可审查、可追责、可验证的证据资格。</span></p>
+              <p><span class="en">My path did not begin from pure theory, but from a recurring problem encountered across vehicle platforms, offline engineering experience, and hardware-software prototyping: how can digital records be returned to the judgment of reality?</span><span class="cn">我的路径不是从纯理论开始，而是来自车辆平台、线下工程体验与软硬件原型实践中反复遇到的一个问题：数字记录如何重新接受现实审判？</span></p>
+            </div>
+            <div class="bio-links-row"><a href="https://x.com/TheNewbieWei" target="_blank" rel="noopener">X</a><a href="https://thenewbiewei.substack.com" target="_blank" rel="noopener">Substack</a><a href="https://buttondown.com/TheNewbieWei" target="_blank" rel="noopener">Newsletter</a><a href="https://github.com/TheNewbieWei" target="_blank" rel="noopener">GitHub</a><a href="mailto:">Email</a></div>
+          </aside>
+
+          <article class="bio-system-card">
+            <div class="card-label"><span class="en">05 · PHYSICAL ORACLE SYSTEMS · Theory · Engineering · Patent · Application</span><span class="cn">05 · PHYSICAL ORACLE SYSTEMS · 理论 · 工程 · 专利 · 应用</span></div>
+            <h3><span class="en">Physical Oracle Machines is built for this space.</span><span class="cn">Physical Oracle Machines 就是为这片空间而建的。</span></h3>
+            <p><span class="en">Its core mission is to give Agents, automated devices, and institutions ultimate evidential standing for claims about “real physical processes” — standing that is tamper-resistant, inspectable, and accountable. At present, this framework has not only reached theoretical closure, but has also been deeply laid out in engineering implementation and system-level patent defense. Downward, it covers modular device execution-chain verification, agricultural provenance, and RWA asset minting; upward, it strikes directly at the deepest trust zones of AI consciousness claims and AI alignment.</span><span class="cn">它的核心使命是：让 Agent、自动化设备和机构关于”真实物理过程”的声明，获得不可篡改、可审查、可追责的终极证据资格。目前，这套框架不仅在理论上完成了闭环，在工程实施与系统级专利防御上也已完成了深度布局。它向下覆盖模块化设备的执行链验证、农业溯源与 RWA 资产铸造；向上则直击 AI 意识声明（Consciousness claims）、AI 对齐（Alignment）等最前沿的信任深水区。</span></p>
+            <p><span class="en">This site records the early version of this research agenda moving toward reality.</span><span class="cn">本站记录的，正是这一研究纲领走向现实的早期版本。</span></p>
+          </article>
+
+          <article class="bio-contact-card">
+            <div>
+              <h3><span class="en">Contact</span><span class="cn">联系</span></h3>
+              <p><span class="en">For research collaboration, scenario pilots, media interviews, policy discussion, or ecosystem partnership, you are welcome to contact me. Strategic capital and industrial cooperation can be discussed further once a clear pilot direction is established.</span><span class="cn">欢迎就研究合作、场景试点、媒体采访、政策讨论或生态合作联系。战略资本与产业合作可在明确试点方向后进一步沟通。</span></p>
+            </div>
+            <div class="contact-final"><a class="btn primary" href="https://buttondown.com/TheNewbieWei" target="_blank" rel="noopener"><span class="en">Subscribe / Contact later</span><span class="cn">订阅 / 后续联系</span> →</a><a class="btn" href="https://thenewbiewei.substack.com" target="_blank" rel="noopener"><span class="en">Follow on Substack</span><span class="cn">关注 Substack</span> →</a><a class="btn" href="https://x.com/TheNewbieWei" target="_blank" rel="noopener"><span class="en">X / Thread</span><span class="cn">X / Thread</span> →</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+  <footer class="shell"><span>© 2026 Wei Zhou / 周维</span><span><span class="en">Physical Oracle Machines · simple v2.0</span><span class="cn">物理预言机系统 · 简版 v2.0</span></span></footer>
+  <div class="toast" id="toast"></div>
+  <script>
+    const body=document.body;const toggle=document.getElementById('langToggle');toggle.addEventListener('click',()=>{body.classList.toggle('zh');document.documentElement.lang=body.classList.contains('zh')?'zh-CN':'en';drawMethod();});
+    const toast=document.getElementById('toast');function showToast(msg){toast.textContent=msg;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}
+    document.querySelectorAll('[data-toast]').forEach(el=>{el.addEventListener('click',e=>{if(el.getAttribute('href')==='#'){e.preventDefault();showToast(el.dataset.toast)}})});
+    const subscribeForm=document.getElementById('subscribeForm');if(subscribeForm){subscribeForm.addEventListener('submit',()=>{showToast(body.classList.contains('zh')?'正在跳转到 Buttondown 订阅确认':'Opening Buttondown subscription confirmation')})};
+    const pills=document.querySelectorAll('.filter-pill');const rangeCards=document.querySelectorAll('.range-card');pills.forEach(p=>p.addEventListener('click',()=>{pills.forEach(x=>x.classList.remove('active'));p.classList.add('active');const f=p.dataset.filter;rangeCards.forEach(c=>c.classList.toggle('hidden',f!=='all'&&!c.dataset.tags.includes(f)))}));
+    const methodData=[{enT:'A digital log is not the physical event.',cnT:'数字日志不是物理事件本身。',en:'The first task is to locate the break between a symbolic claim and the external process it refers to. A signed log is not yet evidence of source reality.',cn:'第一步是找出符号化声明和其所指外部过程之间的断裂。签名日志还不是源头现实的证据。'},{enT:'The claim must be bound to how evidence is born.',cnT:'声明必须绑定到证据如何出生。',en:'The system links the claim to protected observation paths, bounded time windows, and physical response structures so the evidence has a constrained origin.',cn:'系统把声明绑定到受保护观测路径、有界时间窗口和物理响应结构，让证据拥有受约束的出生路径。'},{enT:'Evidence is judged against adversarial reconstruction.',cnT:'证据要面对对抗性重构。',en:'The evidence is evaluated through residual consistency, delayed truth inputs, and the cost of reconstructing a fake trajectory after the fact.',cn:'通过残差一致性、后验真值输入和事后伪造轨迹的重构成本来裁决证据。'}];
+    const tabs=document.querySelectorAll('.method-tab');tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');const i=+t.dataset.step;const title=document.getElementById('methodTitle'),text=document.getElementById('methodText');title.querySelector('.en').textContent=methodData[i].enT;title.querySelector('.cn').textContent=methodData[i].cnT;text.querySelector('.en').textContent=methodData[i].en;text.querySelector('.cn').textContent=methodData[i].cn;document.querySelectorAll('.example-step').forEach((x,idx)=>x.classList.toggle('active',idx===i));drawMethod();}));
+
+    const bioButtons=document.querySelectorAll('.bio-tab-button');const bioPanels=document.querySelectorAll('.bio-tab-panel');bioButtons.forEach(btn=>btn.addEventListener('click',()=>{const idx=+btn.dataset.bioTab;bioButtons.forEach(b=>b.classList.toggle('active',b===btn));bioPanels.forEach((p,i)=>p.classList.toggle('active',i===idx));}));
+    function heroCanvas(){const c=document.getElementById('heroCanvas');if(!c)return;const ctx=c.getContext('2d');function resize(){const r=c.getBoundingClientRect();c.width=Math.floor(r.width*devicePixelRatio);c.height=Math.floor(r.height*devicePixelRatio);ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}resize();let t=0;function loop(){const w=c.clientWidth,h=c.clientHeight;ctx.clearRect(0,0,w,h);ctx.globalAlpha=.8;for(let i=0;i<16;i++){const x=(i/15)*w;const y=h*.24+Math.sin(t*.012+i*.72)*42;ctx.beginPath();ctx.arc(x,y,2.2,0,Math.PI*2);ctx.fillStyle='rgba(139,58,31,.52)';ctx.fill();if(i>0){const px=((i-1)/15)*w;const py=h*.24+Math.sin(t*.012+(i-1)*.72)*42;ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(x,y);ctx.strokeStyle='rgba(139,58,31,.28)';ctx.lineWidth=1;ctx.stroke()}}for(let j=0;j<7;j++){ctx.beginPath();ctx.arc(w*.62+Math.cos(t*.01+j)*90,h*.64+Math.sin(t*.012+j*1.7)*70,18+j*2,0,Math.PI*2);ctx.strokeStyle='rgba(32,32,29,.08)';ctx.stroke()}t++;requestAnimationFrame(loop)}window.addEventListener('resize',resize);loop()}
+    function drawMethod(){const c=document.getElementById('methodCanvas');if(!c)return;const ctx=c.getContext('2d'),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);ctx.lineWidth=2;const active=[...tabs].findIndex(t=>t.classList.contains('active'));const xs=[90,400,710],y=82;for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(xs[i],y,30,0,Math.PI*2);ctx.fillStyle=i===active?'#8b3a1f':'#fffaf0';ctx.fill();ctx.strokeStyle=i===active?'#8b3a1f':'#cdbfa9';ctx.stroke();ctx.fillStyle=i===active?'#fff5e5':'#20201d';ctx.font='700 18px Inter';ctx.textAlign='center';ctx.fillText(String(i+1),xs[i],y+6);if(i<2){ctx.beginPath();ctx.moveTo(xs[i]+34,y);ctx.lineTo(xs[i+1]-34,y);ctx.strokeStyle=i<active?'#8b3a1f':'#cdbfa9';ctx.setLineDash([8,7]);ctx.stroke();ctx.setLineDash([])}}ctx.font='700 13px Inter';ctx.fillStyle='#756d62';ctx.fillText(body.classList.contains('zh')?'声明':'claim',xs[0],135);ctx.fillText(body.classList.contains('zh')?'绑定':'bind',xs[1],135);ctx.fillText(body.classList.contains('zh')?'裁决':'adjudicate',xs[2],135)}
+    heroCanvas();drawMethod();window.addEventListener('resize',drawMethod);
+  </script>
+</body>
+</html>
