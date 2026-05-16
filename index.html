@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wei Zhou — Physical Oracle Machines</title>
-  <meta name="description" content="Founder-researcher building Physical Oracle Machines for the Agentic AI era, bridging physical reality with automated symbolic closure." />
+  <title>Wei Zhou — Physical Oracle Systems</title>
+  <meta name="description" content="Founder-researcher building Physical Oracle Systems for the Agentic AI era, bridging physical reality with automated symbolic closure." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
@@ -85,6 +85,71 @@
       line-height:1.5;
     }
 
+
+    .publication-panel{
+      border:1px solid var(--line);
+      background:rgba(255,253,248,.82);
+      border-radius:var(--radius);
+      box-shadow:var(--softShadow);
+      padding:30px;
+      display:grid;
+      grid-template-columns:minmax(0,.94fr) minmax(360px,.86fr);
+      gap:26px;
+      align-items:start;
+    }
+    .publication-copy h3{
+      margin:0 0 12px;
+      font-size:30px;
+      line-height:1.12;
+      letter-spacing:-.045em;
+    }
+    .publication-copy p{
+      color:var(--soft);
+      font-size:16.5px;
+      line-height:1.78;
+      margin:0 0 14px;
+    }
+    .citation-box{
+      border:1px solid var(--line2);
+      background:#fff7e8;
+      border-radius:18px;
+      padding:20px;
+    }
+    .citation-row{
+      display:grid;
+      grid-template-columns:112px 1fr;
+      gap:12px;
+      padding:12px 0;
+      border-bottom:1px solid var(--line);
+      font-size:14px;
+      line-height:1.55;
+      color:var(--soft);
+    }
+    .citation-row:last-child{border-bottom:none}
+    .citation-label{
+      font-family:"JetBrains Mono",monospace;
+      font-size:11px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--accent);
+      font-weight:850;
+    }
+    .citation-value strong{color:var(--ink)}
+    .citation-format{
+      margin-top:15px;
+      border:1px dashed rgba(139,58,31,.38);
+      background:#fffdf8;
+      border-radius:14px;
+      padding:14px;
+      font-family:"Source Serif 4","Noto Serif SC",serif;
+      color:var(--ink);
+      font-size:14.5px;
+      line-height:1.6;
+    }
+    .zh .citation-format{font-family:"Noto Serif SC",serif;line-height:1.8}
+    @media(max-width:980px){.publication-panel{grid-template-columns:1fr;padding:24px}.citation-row{grid-template-columns:1fr;gap:4px}}
+
+
   </style>
 
 <!--
@@ -93,14 +158,14 @@ LAUNCH CONFIGURATION:
    https://buttondown.com/api/emails/embed-subscribe/TheNewbieWei
 2) X link is set to https://x.com/TheNewbieWei
 3) Substack link is set to https://thenewbiewei.substack.com — change this if your Substack slug differs.
-4) GitHub link is set to https://github.com/TheNewbieWei
-5) Field guide / technical note links can be replaced after publication.
+4) LinkedIn link is set to https://www.linkedin.com/in/wei-zhou-abc
+5) Field guide / technical note / DOI links can be replaced after publication.
 -->
 </head>
 <body>
   <header class="topbar">
     <div class="shell nav">
-      <a href="#top" class="brand" aria-label="Wei Zhou home"><span class="brand-mark">WZ</span><span><span class="cn">周维</span><span class="en">Wei Zhou</span></span></a>
+      <a href="#top" class="brand" aria-label="Wei Zhou home"><span class="brand-mark">WZ</span><span><span class="en">Wei Zhou — Founder-Researcher of Physical Oracle Systems</span><span class="cn">周维 — 物理预言机系统创始人型研究者</span></span></a>
       <div class="nav-right">
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#current"><span class="en">Current</span><span class="cn">当前议题</span></a>
@@ -143,14 +208,14 @@ LAUNCH CONFIGURATION:
       <div class="cred-bar bio-hook">
         <div class="bio-hook-inner">
           <div class="bio-hook-copy">
-            <p class="hook-name"><span class="en">Wei Zhou / 周维 · Founder-Researcher, Physical Oracle Machines · @TheNewbieWei</span><span class="cn">周维 / Wei Zhou · Founder-Researcher, Physical Oracle Machines · @TheNewbieWei</span></p>
+            <p class="hook-name"><span class="en">Wei Zhou · Founder-Researcher of Physical Oracle Systems · @TheNewbieWei</span><span class="cn">周维 · 物理预言机系统创始人型研究者 · @TheNewbieWei</span></p>
             <p><span class="en">My work comes from more than a decade of exposure to high-mobility special-purpose off-road platforms, offline / off-grid / weak-network field operations, and the product definition of mobile physical systems. These platforms operate in places where centralized trust infrastructure often cannot reach: oil and gas pipelines, power-line inspection, emergency response, agricultural operations, and security-edge environments.</span><span class="cn">我的问题意识来自十余年高机动特种越野平台、离线/离网/弱网作业场景与移动设备原型的产品定义和场景论证。对标乌尼莫克级别的特种越野平台，面对的是一类中心化信任基础设施难以覆盖的现场：油气管线、电力巡检、应急抢险、农业作业和安防边界。</span></p>
             <p><span class="en">These environments are not short of value creation. Much of the world’s resources, labor, and productive activity exists precisely beyond the easy reach of centralized verification. What is missing is a mechanism that can turn field operations into reviewable, accountable, and verifiable data assets — not merely logs, signatures, or uploaded records.</span><span class="cn">这些地方并不缺少价值创造。恰恰相反，世界上大量资源、生产要素和物理劳动都发生在这些“信任暗区”。真正缺失的是一种机制：让现场作业不只被记录、上传或签名，而是能够转化为可审查、可追责、可验证的可信数据资产。</span></p>
             <p><span class="en"><strong>Physical Oracle Machines</strong> grows out of this gap: making claims by agents, devices, and institutions about real physical processes evidentially qualified.</span><span class="cn"><strong>Physical Oracle Machines</strong> 正是从这个断层中生长出来的：让 Agent、设备和机构关于真实物理过程的声明，获得证据资格。</span></p>
           </div>
           <div class="bio-hook-footer">
             <a class="bio-more-link" href="#about"><span class="en">Full background</span><span class="cn">完整背景</span> ↓</a>
-            <div class="social-links"><a href="https://x.com/TheNewbieWei" target="_blank" rel="noopener">X</a><a href="https://thenewbiewei.substack.com" target="_blank" rel="noopener">Substack</a><a href="https://buttondown.com/TheNewbieWei" target="_blank" rel="noopener">Newsletter</a><a href="https://github.com/TheNewbieWei" target="_blank" rel="noopener">GitHub</a></div>
+            <div class="social-links"><a href="https://x.com/TheNewbieWei" target="_blank" rel="noopener">X</a><a href="https://thenewbiewei.substack.com" target="_blank" rel="noopener">Substack</a><a href="https://www.linkedin.com/in/wei-zhou-abc" target="_blank" rel="noopener">LinkedIn</a><a href="#note">Subscribe</a></div>
           </div>
         </div>
       </div>
@@ -165,7 +230,7 @@ LAUNCH CONFIGURATION:
         <div class="topic-grid">
           <article class="topic-card"><div class="card-label"><span class="en">Field Guide</span><span class="cn">争论导览</span></div><h3><span class="en">Visible Positions and One Empty Seat</span><span class="cn">可见阵营与一个空位</span></h3><p><span class="en">A map of the visible response positions after Lerchner — and the missing evidential question they leave open.</span><span class="cn">梳理 Lerchner 之后的可见响应阵营，以及这些阵营共同留下的证据资格空位。</span></p><a class="card-cta" href="#" data-toast="Replace with the Substack field guide link"><span class="en">Read the field guide</span><span class="cn">阅读导览</span> →</a></article>
           <article class="topic-card"><div class="card-label"><span class="en">Core Argument</span><span class="cn">核心论证</span></div><h3><span class="en">The No-Oracle Thesis</span><span class="cn">无预言机论题</span></h3><p><span class="en">Why the debate may be searching for a Yes-Oracle that cannot exist inside syntax — and why the disputed object is the bridge.</span><span class="cn">为什么这场争论可能一直在寻找一个无法存在于句法内部的 YES-Oracle，以及为什么真正有争议的是“桥”。</span></p><a class="card-cta" href="#thesis"><span class="en">Jump to thesis</span><span class="cn">跳到论题</span> ↓</a></article>
-          <article class="topic-card"><div class="card-label"><span class="en">Technical Note</span><span class="cn">技术笔记</span></div><h3><span class="en">Beyond the Abstraction Fallacy</span><span class="cn">超越抽象谬误</span></h3><p><span class="en">A forthcoming admissibility protocol for machine-mind bridge claims, focused on evidence standing rather than metaphysical verdicts.</span><span class="cn">即将发布的机器—心智桥接声明可采纳协议，重点不是形而上判决，而是证据资格。</span></p><a class="card-cta" href="#note"><span class="en">Get notified</span><span class="cn">订阅通知</span> →</a></article>
+          <article class="topic-card"><div class="card-label"><span class="en">Technical Note</span><span class="cn">技术笔记</span></div><h3><span class="en">Beyond the Abstraction Fallacy</span><span class="cn">超越抽象谬误</span></h3><p><span class="en">A forthcoming technical note: AI consciousness claims as a No-Oracle problem, focused on evidence standing rather than metaphysical verdicts.</span><span class="cn">即将发布的技术笔记：把 AI 意识声明作为一个无预言机问题处理，重点不是形而上判决，而是证据资格。</span></p><a class="card-cta" href="#note"><span class="en">Get notified</span><span class="cn">订阅通知</span> →</a></article>
         </div>
       </div>
     </section>
@@ -193,7 +258,7 @@ LAUNCH CONFIGURATION:
       <div class="shell note-panel">
         <div class="note-copy">
           <div class="section-kicker"><span class="en">03 · Forthcoming Technical Note</span><span class="cn">03 · 即将发布的技术笔记</span></div>
-          <h3><span class="en">Beyond the Abstraction Fallacy:<br/>The Missing Evidential Interface for AI Consciousness Claims</span><span class="cn">超越抽象谬误：<br/>AI 意识声明中缺失的证据接口</span></h3>
+          <h3><span class="en">Beyond the Abstraction Fallacy:<br/>AI Consciousness Claims as a No-Oracle Problem</span><span class="cn">超越抽象谬误：<br/>作为无预言机问题的 AI 意识声明</span></h3>
           <p><span class="en">The note does not claim that AI is conscious or unconscious. It asks the prior question: before any claim about machine consciousness can be accepted or rejected, what would make the claim evidentially admissible?</span><span class="cn">这份笔记不宣称 AI 有意识或无意识。它先问一个前置问题：在任何机器意识声明被接受或拒绝之前，什么让这个声明具备证据上的可采纳性？</span></p>
         </div>
         <form class="subscribe-box" id="subscribeForm" action="https://buttondown.com/api/emails/embed-subscribe/TheNewbieWei" method="post" target="_blank">
@@ -209,7 +274,26 @@ LAUNCH CONFIGURATION:
       </div>
     </section>
 
-    
+
+    <section id="publication">
+      <div class="shell publication-panel">
+        <div class="publication-copy">
+          <div class="section-kicker"><span class="en">Publication Record / DOI & Citation</span><span class="cn">发布记录 / DOI 与引用格式</span></div>
+          <h3><span class="en">A professional citation record will live here.</span><span class="cn">未来正式引用记录将放在这里。</span></h3>
+          <p><span class="en">When the technical note is released, this section will show the stable DOI, version, public record page, and recommended citation format. This keeps the newsletter and social traffic connected to a professional scholarly record.</span><span class="cn">技术笔记发布后，这一节将显示稳定 DOI、版本号、公开记录页面和推荐引用格式。这样，订阅流量和社交传播会被连接到一个专业的学术记录。</span></p>
+          <p><span class="en">Current status: <strong>forthcoming</strong>. This is a placeholder for the first release.</span><span class="cn">当前状态：<strong>即将发布</strong>。这里先作为第一版发布记录的占位。</span></p>
+        </div>
+        <div class="citation-box" aria-label="Citation record placeholder">
+          <div class="citation-row"><div class="citation-label">Title</div><div class="citation-value"><strong>Beyond the Abstraction Fallacy:</strong><br/><span class="en">AI Consciousness Claims as a No-Oracle Problem</span><span class="cn">作为无预言机问题的 AI 意识声明</span></div></div>
+          <div class="citation-row"><div class="citation-label">Author</div><div class="citation-value">Wei Zhou / 周维</div></div>
+          <div class="citation-row"><div class="citation-label">Type</div><div class="citation-value"><span class="en">Technical Note · v0.1 forthcoming</span><span class="cn">技术笔记 · v0.1 即将发布</span></div></div>
+          <div class="citation-row"><div class="citation-label">DOI</div><div class="citation-value"><span class="en">Forthcoming</span><span class="cn">待发布</span></div></div>
+          <div class="citation-row"><div class="citation-label">Record</div><div class="citation-value"><span class="en">DOI / archive page forthcoming</span><span class="cn">DOI / 归档页面待发布</span></div></div>
+          <div class="citation-format"><span class="en">Suggested citation draft:<br/>Zhou, Wei. “Beyond the Abstraction Fallacy: AI Consciousness Claims as a No-Oracle Problem.” Technical Note, 2026. DOI forthcoming.</span><span class="cn">建议引用格式草案：<br/>Zhou, Wei. “Beyond the Abstraction Fallacy: The Missing Evidential Interface for AI Consciousness Claims.” Technical Note, 2026. DOI 待发布。</span></div>
+        </div>
+      </div>
+    </section>
+
 
     <section id="oracle">
       <div class="shell">
@@ -327,17 +411,17 @@ LAUNCH CONFIGURATION:
           <div class="bio-tab-nav">
             <button class="bio-tab-button active" type="button" data-bio-tab="0">
               <small>01 · ORIGIN</small>
-              <b><span class="en">Origin · 起点</span><span class="cn">Origin · 起点</span></b>
+              <b><span class="en">Origin · Starting point</span><span class="cn">Origin · 起点</span></b>
               <span class="note"><span class="en">Heavy off-road platforms · offline / off-grid field operations · fifteen years</span><span class="cn">重型越野平台 · 离线/离网场景 · 十五年</span></span>
             </button>
             <button class="bio-tab-button" type="button" data-bio-tab="1">
               <small>02 · VANTAGE</small>
-              <b><span class="en">Vantage · 那个位置给我的视角</span><span class="cn">Vantage · 那个位置给我的视角</span></b>
+              <b><span class="en">Vantage · Field perspective</span><span class="cn">Vantage · 那个位置给我的视角</span></b>
               <span class="note"><span class="en">The physical value space beyond centralized infrastructure</span><span class="cn">中心化基础设施之外的物理价值空间</span></span>
             </button>
             <button class="bio-tab-button" type="button" data-bio-tab="2">
               <small>03 · CONVERGENCE</small>
-              <b><span class="en">Convergence · 与认识论缝隙的相遇</span><span class="cn">Convergence · 与认识论缝隙的相遇</span></b>
+              <b><span class="en">Convergence · Epistemic gap</span><span class="cn">Convergence · 与认识论缝隙的相遇</span></b>
               <span class="note"><span class="en">Physical entitlement ↔ AI consciousness claims</span><span class="cn">物理确权 ↔ AI 意识声明的同构发现</span></span>
             </button>
           </div>
@@ -382,7 +466,7 @@ LAUNCH CONFIGURATION:
               <p><span class="en">My work focuses on the evidence-interface problem of the AI era: how machines, models, and digital systems can make claims about the real world with evidential standing that is inspectable, accountable, and verifiable.</span><span class="cn">我的工作聚焦于 AI 时代的证据接口问题：如何让机器、模型和数字系统关于真实世界的声明，获得可审查、可追责、可验证的证据资格。</span></p>
               <p><span class="en">My path did not begin from pure theory, but from a recurring problem encountered across vehicle platforms, offline engineering experience, and hardware-software prototyping: how can digital records be returned to the judgment of reality?</span><span class="cn">我的路径不是从纯理论开始，而是来自车辆平台、线下工程体验与软硬件原型实践中反复遇到的一个问题：数字记录如何重新接受现实审判？</span></p>
             </div>
-            <div class="bio-links-row"><a href="https://x.com/TheNewbieWei" target="_blank" rel="noopener">X</a><a href="https://thenewbiewei.substack.com" target="_blank" rel="noopener">Substack</a><a href="https://buttondown.com/TheNewbieWei" target="_blank" rel="noopener">Newsletter</a><a href="https://github.com/TheNewbieWei" target="_blank" rel="noopener">GitHub</a><a href="mailto:">Email</a></div>
+            <div class="bio-links-row"><a href="https://x.com/TheNewbieWei" target="_blank" rel="noopener">X</a><a href="https://thenewbiewei.substack.com" target="_blank" rel="noopener">Substack</a><a href="https://www.linkedin.com/in/wei-zhou-abc" target="_blank" rel="noopener">LinkedIn</a><a href="#note">Subscribe</a></div>
           </aside>
 
           <article class="bio-system-card">
@@ -397,7 +481,7 @@ LAUNCH CONFIGURATION:
               <h3><span class="en">Contact</span><span class="cn">联系</span></h3>
               <p><span class="en">For research collaboration, scenario pilots, media interviews, policy discussion, or ecosystem partnership, you are welcome to contact me. Strategic capital and industrial cooperation can be discussed further once a clear pilot direction is established.</span><span class="cn">欢迎就研究合作、场景试点、媒体采访、政策讨论或生态合作联系。战略资本与产业合作可在明确试点方向后进一步沟通。</span></p>
             </div>
-            <div class="contact-final"><a class="btn primary" href="https://buttondown.com/TheNewbieWei" target="_blank" rel="noopener"><span class="en">Subscribe / Contact later</span><span class="cn">订阅 / 后续联系</span> →</a><a class="btn" href="https://thenewbiewei.substack.com" target="_blank" rel="noopener"><span class="en">Follow on Substack</span><span class="cn">关注 Substack</span> →</a><a class="btn" href="https://x.com/TheNewbieWei" target="_blank" rel="noopener"><span class="en">X / Thread</span><span class="cn">X / Thread</span> →</a></div>
+            <div class="contact-final"><a class="btn primary" href="#note"><span class="en">Subscribe / Get notified</span><span class="cn">订阅 / 发布时通知我</span> →</a><a class="btn" href="https://thenewbiewei.substack.com" target="_blank" rel="noopener"><span class="en">Follow on Substack</span><span class="cn">关注 Substack</span> →</a><a class="btn" href="https://www.linkedin.com/in/wei-zhou-abc" target="_blank" rel="noopener">LinkedIn →</a><a class="btn" href="https://x.com/TheNewbieWei" target="_blank" rel="noopener"><span class="en">X / Thread</span><span class="cn">X / Thread</span> →</a></div>
           </article>
         </div>
       </div>
@@ -405,7 +489,7 @@ LAUNCH CONFIGURATION:
 
     </main>
 
-  <footer class="shell"><span>© 2026 Wei Zhou / 周维</span><span><span class="en">Physical Oracle Machines · simple v2.0</span><span class="cn">物理预言机系统 · 简版 v2.0</span></span></footer>
+  <footer class="shell"><span><span class="en">© 2026 Wei Zhou</span><span class="cn">© 2026 周维</span></span><span><span class="en">Physical Oracle Systems · simple v5.0</span><span class="cn">物理预言机系统 · 简版 v5.0</span></span></footer>
   <div class="toast" id="toast"></div>
   <script>
     const body=document.body;const toggle=document.getElementById('langToggle');toggle.addEventListener('click',()=>{body.classList.toggle('zh');document.documentElement.lang=body.classList.contains('zh')?'zh-CN':'en';drawMethod();});
