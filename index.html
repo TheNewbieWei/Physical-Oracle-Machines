@@ -150,6 +150,58 @@
     @media(max-width:980px){.publication-panel{grid-template-columns:1fr;padding:24px}.citation-row{grid-template-columns:1fr;gap:4px}}
 
 
+
+    .subscribe-box.submitted{
+      justify-content:center;
+      min-height:260px;
+    }
+    .thank-you-panel{
+      display:grid;
+      gap:14px;
+    }
+    .thank-you-kicker{
+      font-family:"JetBrains Mono",monospace;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--accent);
+      font-weight:900;
+    }
+    .thank-you-panel h3{
+      margin:0;
+      font-size:26px;
+      line-height:1.12;
+      letter-spacing:-.04em;
+    }
+    .thank-you-panel p{
+      margin:0;
+      color:var(--soft);
+      font-size:15.5px;
+      line-height:1.7;
+    }
+    .thank-you-email{
+      display:inline-block;
+      margin-top:2px;
+      padding:6px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff7e8;
+      color:var(--ink);
+      font-weight:850;
+      word-break:break-all;
+    }
+    .thank-you-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:4px;
+    }
+    .thank-you-actions .btn{
+      min-height:42px;
+      padding:0 15px;
+      font-size:13.5px;
+    }
+
   </style>
 
 <!--
@@ -261,16 +313,17 @@ LAUNCH CONFIGURATION:
           <h3><span class="en">Beyond the Abstraction Fallacy:<br/>AI Consciousness Claims as a No-Oracle Problem</span><span class="cn">超越抽象谬误：<br/>作为无预言机问题的 AI 意识声明</span></h3>
           <p><span class="en">The note does not claim that AI is conscious or unconscious. It asks the prior question: before any claim about machine consciousness can be accepted or rejected, what would make the claim evidentially admissible?</span><span class="cn">这份笔记不宣称 AI 有意识或无意识。它先问一个前置问题：在任何机器意识声明被接受或拒绝之前，什么让这个声明具备证据上的可采纳性？</span></p>
         </div>
-        <form class="subscribe-box" id="subscribeForm" action="https://buttondown.com/api/emails/embed-subscribe/TheNewbieWei" method="post" target="_blank">
+        <form class="subscribe-box" id="subscribeForm" action="https://buttondown.com/api/emails/embed-subscribe/TheNewbieWei" method="post" target="buttondownHiddenFrame">
           <label for="email"><span class="en">Get the release notice</span><span class="cn">订阅发布通知</span></label>
           <input id="email" name="email" type="email" required placeholder="email@example.com" autocomplete="email" />
           <input type="hidden" value="1" name="embed" />
           <input type="hidden" value="technical-note" name="tag" />
-          <input type="hidden" value="physical-oracle-machines-simple-v2" name="metadata__source" />
+          <input type="hidden" value="physical-oracle-machines-simple-v8-inline-thanks" name="metadata__source" />
           <button class="btn primary" type="submit"><span class="en">Subscribe / Notify me</span><span class="cn">订阅 / 发布时通知我</span> →</button>
           <p class="subscribe-note"><span class="en">Enter your email to receive the release notice when the technical note is published.</span><span class="cn">留下邮箱，技术笔记发布时收到通知。</span></p>
-          <span class="small-meta"><span class="en">Static-site ready. Buttondown is connected to @TheNewbieWei.</span><span class="cn">适配静态网站。Buttondown 已接入 @TheNewbieWei。</span></span>
+          <span class="small-meta"><span class="en">No redirect. Buttondown is connected to @TheNewbieWei.</span><span class="cn">站内提交，不跳转。Buttondown 已接入 @TheNewbieWei。</span></span>
         </form>
+        <iframe name="buttondownHiddenFrame" title="Buttondown subscription confirmation frame" style="display:none;width:0;height:0;border:0;position:absolute;left:-9999px;"></iframe>
       </div>
     </section>
 
@@ -489,13 +542,47 @@ LAUNCH CONFIGURATION:
 
     </main>
 
-  <footer class="shell"><span><span class="en">© 2026 Wei Zhou</span><span class="cn">© 2026 周维</span></span><span><span class="en">Physical Oracle Systems · simple v5.0</span><span class="cn">物理预言机系统 · 简版 v5.0</span></span></footer>
+  <footer class="shell"><span><span class="en">© 2026 Wei Zhou</span><span class="cn">© 2026 周维</span></span><span><span class="en">Physical Oracle Systems · simple v8.0</span><span class="cn">物理预言机系统 · 简版 v8.0</span></span></footer>
   <div class="toast" id="toast"></div>
   <script>
     const body=document.body;const toggle=document.getElementById('langToggle');toggle.addEventListener('click',()=>{body.classList.toggle('zh');document.documentElement.lang=body.classList.contains('zh')?'zh-CN':'en';drawMethod();});
     const toast=document.getElementById('toast');function showToast(msg){toast.textContent=msg;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}
     document.querySelectorAll('[data-toast]').forEach(el=>{el.addEventListener('click',e=>{if(el.getAttribute('href')==='#'){e.preventDefault();showToast(el.dataset.toast)}})});
-    const subscribeForm=document.getElementById('subscribeForm');if(subscribeForm){subscribeForm.addEventListener('submit',()=>{showToast(body.classList.contains('zh')?'正在跳转到 Buttondown 订阅确认':'Opening Buttondown subscription confirmation')})};
+    const subscribeForm=document.getElementById('subscribeForm');
+    function inboxUrlFor(email){
+      const domain=(email.split('@')[1]||'').toLowerCase();
+      if(!domain) return '';
+      if(domain==='gmail.com'||domain==='googlemail.com') return 'https://mail.google.com/mail/u/0/#inbox';
+      if(['outlook.com','hotmail.com','live.com','msn.com'].includes(domain)) return 'https://outlook.live.com/mail/0/inbox';
+      if(domain==='yahoo.com'||domain==='ymail.com'||domain==='rocketmail.com') return 'https://mail.yahoo.com/';
+      if(['icloud.com','me.com','mac.com'].includes(domain)) return 'https://www.icloud.com/mail/';
+      if(domain==='qq.com') return 'https://mail.qq.com/';
+      if(domain==='163.com') return 'https://mail.163.com/';
+      if(domain==='126.com') return 'https://mail.126.com/';
+      return '';
+    }
+    function renderSubscribeThanks(email){
+      if(!subscribeForm) return;
+      const zh=body.classList.contains('zh');
+      const inbox=inboxUrlFor(email);
+      subscribeForm.classList.add('submitted');
+      const openInbox = inbox ? `<a class="btn primary" href="${inbox}" target="_blank" rel="noopener">${zh?'打开邮箱':'Open inbox'} →</a>` : '';
+      subscribeForm.innerHTML = `
+        <div class="thank-you-panel" role="status" aria-live="polite">
+          <div class="thank-you-kicker">${zh?'Subscription submitted':'Subscription submitted'}</div>
+          <h3>${zh?'谢谢关注。请去邮箱确认订阅。':'Thank you. Please confirm in your inbox.'}</h3>
+          <p>${zh?'我们已经把确认邮件发送到：':'We sent a confirmation email to:'}<br/><span class="thank-you-email">${email.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span></p>
+          <p>${zh?'点击邮件里的确认链接后，你才会正式收到技术笔记发布通知。':'Click the confirmation link in the email to activate your subscription and receive the technical note release notice.'}</p>
+          <div class="thank-you-actions">${openInbox}<a class="btn" href="#note" onclick="location.reload();return false;">${zh?'换一个邮箱':'Use another email'}</a></div>
+        </div>`;
+    }
+    if(subscribeForm){subscribeForm.addEventListener('submit',()=>{
+      const emailInput=subscribeForm.querySelector('input[name=email]');
+      const btn=subscribeForm.querySelector('button[type=submit]');
+      const email=emailInput?emailInput.value.trim():'';
+      if(btn){btn.disabled=true;btn.style.opacity='.72';}
+      setTimeout(()=>renderSubscribeThanks(email),450);
+    })};
     const pills=document.querySelectorAll('.filter-pill');const rangeCards=document.querySelectorAll('.range-card');pills.forEach(p=>p.addEventListener('click',()=>{pills.forEach(x=>x.classList.remove('active'));p.classList.add('active');const f=p.dataset.filter;rangeCards.forEach(c=>c.classList.toggle('hidden',f!=='all'&&!c.dataset.tags.includes(f)))}));
     const methodData=[{enT:'A digital log is not the physical event.',cnT:'数字日志不是物理事件本身。',en:'The first task is to locate the break between a symbolic claim and the external process it refers to. A signed log is not yet evidence of source reality.',cn:'第一步是找出符号化声明和其所指外部过程之间的断裂。签名日志还不是源头现实的证据。'},{enT:'The claim must be bound to how evidence is born.',cnT:'声明必须绑定到证据如何出生。',en:'The system links the claim to protected observation paths, bounded time windows, and physical response structures so the evidence has a constrained origin.',cn:'系统把声明绑定到受保护观测路径、有界时间窗口和物理响应结构，让证据拥有受约束的出生路径。'},{enT:'Evidence is judged against adversarial reconstruction.',cnT:'证据要面对对抗性重构。',en:'The evidence is evaluated through residual consistency, delayed truth inputs, and the cost of reconstructing a fake trajectory after the fact.',cn:'通过残差一致性、后验真值输入和事后伪造轨迹的重构成本来裁决证据。'}];
     const tabs=document.querySelectorAll('.method-tab');tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');const i=+t.dataset.step;const title=document.getElementById('methodTitle'),text=document.getElementById('methodText');title.querySelector('.en').textContent=methodData[i].enT;title.querySelector('.cn').textContent=methodData[i].cnT;text.querySelector('.en').textContent=methodData[i].en;text.querySelector('.cn').textContent=methodData[i].cn;document.querySelectorAll('.example-step').forEach((x,idx)=>x.classList.toggle('active',idx===i));drawMethod();}));
